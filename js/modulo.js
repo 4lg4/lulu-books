@@ -1,0 +1,4 @@
+// modulos
+(()=> {
+    window.ui.modulo = {};
+})();
