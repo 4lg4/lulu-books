@@ -45,7 +45,7 @@
                 </li>
 
                 <li class="pure-menu-item menu-item-divided">
-                    <a href="#" class="pure-menu-link menu" data-menu-key="funcionarios">Funcionários</a>
+                    <a href="#" class="pure-menu-link menu" data-menu-key="funcionario">Funcionários</a>
                 </li>
 
                 <li class="pure-menu-item menu-item-divided" data-menu-key="livros">
@@ -67,22 +67,20 @@
 
         <div class="content">
             <p>
-                <!-- <div class="pure-g pure-u-1"> -->
-                    <table>
-                        <thead>
-                            <tr>
-                                <th width="30%">Nome</th>
-                                <th width="30%">Email</th>
-                                <th width="30%">Telefone</th>
-                                <th width="10%">Actions</th>
-                            </tr>
-                        </thead>
-                    
-                        <tbody data-name="client-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="30%">Nome</th>
+                            <th width="30%">Email</th>
+                            <th width="30%">Telefone</th>
+                            <th width="10%">Actions</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody data-name="client-list">
 
-                        </tbody>
-                    </table>
-                <!-- </div> -->
+                    </tbody>
+                </table>
             </p>
 
             <hr>
@@ -124,30 +122,29 @@
     </div>
 
 
-    <div class="main" data-name="book-module">
+    <div class="main" data-name="funcionario-module">
         <div class="header">
-            <h2>Clientes</h2>
-            <h3>Gerenciamento de clientes</h3>
+            <h2>Funcionarios</h2>
+            <h3>Gerenciamento de funcionarios</h3>
         </div>
 
         <div class="content">
             <p>
-                <!-- <div class="pure-g pure-u-1"> -->
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Email</th>
-                                <th>Telefone</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                    
-                        <tbody data-name="book-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="30%">Nome</th>
+                            <th width="20%">Cargo</th>
+                            <th width="20%">Admissão</th>
+                            <th width="20%">Demissão</th>
+                            <th width="10%">Actions</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody data-name="funcionario-list">
 
-                        </tbody>
-                    </table>
-                <!-- </div> -->
+                    </tbody>
+                </table>
             </p>
 
             <hr>
@@ -156,31 +153,35 @@
                 <form class="pure-form pure-form-aligned">
                     <fieldset>
                         <div class="pure-control-group">
-                            <input type="text" placeholder="Nome" class="pure-input-1" data-form="cliente_nome">
+                            <input type="text" placeholder="Nome" class="pure-input-1" data-form="funcionario_nome">
                         </div>
 
                         <div class="pure-control-group">
-                            <input type="text" placeholder="Email" class="pure-input-1" data-form="cliente_email">
+                            <input type="text" placeholder="Cargo" class="pure-input-1" data-form="funcionario_cargo">
                         </div>
 
                         <div class="pure-control-group">
-                            <input type="text" placeholder="Telefone" class="pure-input-1" data-form="cliente_telefone">
+                            <input type="text" placeholder="Endereço" class="pure-input-1" data-form="funcionario_endereco">
                         </div>
 
                         <div class="pure-control-group">
-                            <input type="text" placeholder="Endereço" class="pure-input-1" data-form="cliente_endereco">
+                            <input type="text" placeholder="Cidade" class="pure-input-1" data-form="funcionario_cidade">
                         </div>
 
                         <div class="pure-control-group">
-                            <input type="text" placeholder="Cidade" class="pure-input-1" data-form="cliente_cidade">
+                            <input type="text" placeholder="Estado" class="pure-input-1" data-form="funcionario_estado">
                         </div>
 
                         <div class="pure-control-group">
-                            <input type="text" placeholder="Estado" class="pure-input-1" data-form="cliente_estado">
+                            <input type="text" placeholder="Data Admissão" class="pure-input-1" data-form="funcionario_data_admissao">
+                        </div>
+
+                        <div class="pure-control-group">
+                            <input type="text" placeholder="Data Demissão" class="pure-input-1" data-form="funcionario_data_demissao">
                         </div>
 
                         <div class="pure-controls form-buttons">
-                            <button type="button" class="pure-button button-primary pure-button-primary button-large" data-form="client-btn-save">Salvar</button>
+                            <button type="button" class="pure-button button-primary pure-button-primary button-large" data-form="funcionario-btn-save">Salvar</button>
                         </div>
                     </fieldset>
                 </form>
@@ -200,9 +201,10 @@
 <script src="js/menu.js"></script>
 <script src="js/modulo.js"></script>
 <script src="js/modulo-clientes.js"></script>
+<script src="js/modulo-funcionarios.js"></script>
 <script>
     (()=>{
-        ui.menu.selectMenu('cliente');
+        ui.menu.selectMenu('funcionario');
     })();
 </script>
 

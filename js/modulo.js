@@ -1,4 +1,6 @@
 // modulos
 (()=> {
-    window.ui.modulo = {};
+    window.ui.modulo = {
+        modulos: {},
+    };
 })();
