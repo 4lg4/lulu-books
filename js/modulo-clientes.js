@@ -5,7 +5,7 @@
     
     let list = [];
 
-    const listHtml = [];
+    let listHtml = [];
     const listHtmlContainer = document.querySelector('[data-name=client-list]');
 
     const form = {
@@ -22,13 +22,18 @@
     const btnSalvar = document.querySelector('[data-form=client-btn-save]');
 
     const submitForm = ()=> {
-        ui.ajax.post(ENDPOINT, formActiveData);
+        ui.ajax
+            .post(ENDPOINT, formActiveData)
+            .then(()=>getList());
     };
 
     const getList = ()=> {
+        listHtmlContainer.innerHTML = '';
+        listHtml = [];
+
         ui.ajax.get(ENDPOINT).then((_list)=> {
-           list = window.ui.modulo.modulos.cliente.list = _list;
-           renderList();
+            list = window.ui.modulo.modulos.cliente.list = _list;
+            renderList();
         });
     };
 
@@ -50,7 +55,7 @@
         formActiveData.estado = client.estado;
         // formActiveData.status = client.status;
     };
-    const delClient = ()=> true;
+    const delClient = (cliente)=> alert(`Não implementado \n deletar cliente id ${cliente.id}`);
 
     const renderList = ()=> {
         list.forEach((row)=> {
@@ -66,7 +71,7 @@
             const del = document.createElement('button');
             del.textContent = 'D';
             del.classList.add('button-error');
-            del.addEventListener('click', ()=> delClient(row.id));
+            del.addEventListener('click', ()=> delClient(row));
 
             colNome.textContent = row['nome'];
             rowEl.appendChild(colNome);
@@ -98,13 +103,11 @@
     
     btnSalvar.addEventListener('click', submitForm);
 
-    window.ui.modulo.modulos = {
-        cliente: {
-            form,
-            formActiveData,
-            getList,
-            list,
-            initialize,
-        }
+    window.ui.modulo.modulos['cliente'] = {
+        form,
+        formActiveData,
+        getList,
+        list,
+        initialize,
     };
 })();
