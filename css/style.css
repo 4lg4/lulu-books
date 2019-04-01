@@ -61,3 +61,18 @@
     color: white !important;
     background: #1f8dd6 !important;
 }
+
+table {
+    width: 100%;
+}
+
+tbody tr:nth-child(odd) td {
+    background: #f5f5f5;
+}
+
+thead th {
+    margin-bottom: 10px;
+    background: #1f8dd6;
+    color: white;
+    text-align: center;
+}

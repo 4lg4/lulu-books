@@ -15,6 +15,7 @@
         pages.forEach((page)=> {
             if (page.dataset.name === `${pageName}-module`) {
                 page.classList.add('active');
+                ui.modulo.modulos[pageName].initialize();
             }
         });
     };

@@ -14,9 +14,9 @@ e.exports=function(e){return null!=e&&(n(e)||r(e)||!!e._isBuffer)}},function(e,t
         // timeout: 1000,
         // headers: {'X-Custom-Header': 'foobar'}
     });
-    
-    const post = axiosInstance.post;
-    const get = axiosInstance.post;
+
+    const get = (endpoint)=> axiosInstance.get(endpoint).then(({data})=> data);
+    const post = (endpoint, data)=> axiosInstance.post(endpoint, data).then(({data})=> data);
 
     window.ui.ajax = {
         get, post,
