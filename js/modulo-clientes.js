@@ -23,7 +23,8 @@
 
     const submitForm = ()=> {
         ui.ajax
-            .post(ENDPOINT, formActiveData)
+            // .post(ENDPOINT, formActiveData)
+            .get(`${ENDPOINT}?action=salvar&${ui.modulo.toQueryString(formActiveData)}`)
             .then(()=>getList());
     };
 

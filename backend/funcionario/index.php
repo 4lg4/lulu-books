@@ -6,13 +6,21 @@ header('Content-Type: application/json');
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        getList();
+        if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'salvar') {
+            createOrUpdate();
+        } else {
+            getList();
+        }
         break;
     case 'POST':
         createOrUpdate();
         break;
     default:
-        getList();
+        if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'salvar') {
+            createOrUpdate();
+        } else {
+            getList();
+        }
         break;
 }
 
@@ -42,8 +50,19 @@ function getList() {
 }
 
 function createOrUpdate() {
-    $data = json_decode(file_get_contents('php://input'), true);
-    $ret = $data;
+    // $data = json_decode(file_get_contents('php://input'), true);
+    // $ret = $data;
+
+    $data = [
+        'id'=> $_GET['id'],
+        'nome'=> $_GET['nome'],
+        'cargo'=> $_GET['cargo'],
+        'endereco'=> $_GET['endereco'],
+        'cidade'=> $_GET['cidade'],
+        'estado'=> $_GET['estado'],
+        'admissao'=> $_GET['admissao'],
+        'demissao'=> $_GET['demissao'],
+    ];
 
     if (array_key_exists('id', $data)) {
         $ret = update($data);
