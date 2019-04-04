@@ -53,8 +53,7 @@ function createOrUpdate() {
     // $data = json_decode(file_get_contents('php://input'), true);
     // $ret = $data;
 
-    $data = [
-        'id'=> $_GET['id'],
+    $data = [        
         'nome'=> $_GET['nome'],
         'cargo'=> $_GET['cargo'],
         'endereco'=> $_GET['endereco'],
@@ -63,6 +62,10 @@ function createOrUpdate() {
         'admissao'=> $_GET['admissao'],
         'demissao'=> $_GET['demissao'],
     ];
+
+    if (isset($_GET['id'])) {
+        $data['id'] = $_GET['id'];
+    }
 
     if (array_key_exists('id', $data)) {
         $ret = update($data);
