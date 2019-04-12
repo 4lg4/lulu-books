@@ -33,11 +33,13 @@
         listHtmlContainer.innerHTML = '';
         listHtml = [];
 
-        ui.ajax.get(ENDPOINT).then((_list)=> {
+        get().then((_list)=> {
            list = window.ui.modulo.modulos.funcionario.list = _list;
            renderList();
         });
     };
+
+    const get = ()=> ui.ajax.get(ENDPOINT);
 
     const editFuncionario = (funcionario)=> {
         form.nome.value = funcionario.nome;
@@ -115,6 +117,7 @@
         form,
         formActiveData,
         getList,
+        get,
         list,
         initialize,
     };

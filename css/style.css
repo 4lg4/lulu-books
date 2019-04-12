@@ -76,3 +76,17 @@ thead th {
     color: white;
     text-align: center;
 }
+
+.row {
+    display: flex;
+}
+
+.column {
+    padding: 10px;
+    border-radius: 4px;
+    background: #5992aa;
+    flex: 1;
+    margin: 10px;
+    color: white;
+    text-align: center;
+}
