@@ -48,12 +48,12 @@
                     <a href="#" class="pure-menu-link menu" data-menu-key="funcionario">Funcionários</a>
                 </li>
 
-                <li class="pure-menu-item menu-item-divided" data-menu-key="livros">
-                    <a href="#" class="pure-menu-link menu">Livros</a>
+                <li class="pure-menu-item menu-item-divided">
+                    <a href="#" class="pure-menu-link menu" data-menu-key="livro">Livros</a>
                 </li>
 
                 <li class="pure-menu-item menu-item-divided">
-                    <a href="#" class="pure-menu-link menu" data-menu-key="emprestimos">Empréstimos</a>
+                    <a href="#" class="pure-menu-link menu" data-menu-key="emprestimo">Empréstimos</a>
                 </li>
             </ul>
         </div>
@@ -188,6 +188,152 @@
             </p>
         </div>
     </div>
+
+
+    <div class="main" data-name="livro-module">
+        <div class="header">
+            <h2>Livros</h2>
+            <h3>Gerenciamento de livros</h3>
+        </div>
+
+        <div class="content">
+            <p>
+            <table>
+                <thead>
+                <tr>
+                    <th width="30%">Nome</th>
+                    <th width="20%">Autor</th>
+                    <th width="20%">Ano</th>
+                    <th width="20%">Genero</th>
+                    <th width="10%">Actions</th>
+                </tr>
+                </thead>
+
+                <tbody data-name="livro-list">
+
+                </tbody>
+            </table>
+            </p>
+
+            <hr>
+
+            <p>
+            <form class="pure-form pure-form-aligned">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <input type="text" placeholder="Nome" class="pure-input-1" data-form="livro_nome">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <input type="text" placeholder="Autor" class="pure-input-1" data-form="livro_autor">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <input type="text" placeholder="Ano" class="pure-input-1" data-form="livro_ano">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <input type="text" placeholder="Genero" class="pure-input-1" data-form="livro_genero">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <input type="text" placeholder="Editora" class="pure-input-1" data-form="livro_editora">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <input type="text" placeholder="Status" class="pure-input-1" data-form="livro_status">
+                    </div>
+
+                    <div class="pure-controls form-buttons">
+                        <button type="button" class="pure-button button-primary pure-button-primary button-large" data-form="livro-btn-save">Salvar</button>
+                    </div>
+                </fieldset>
+            </form>
+            </p>
+        </div>
+    </div>
+
+
+    <div class="main" data-name="emprestimo-module">
+        <div class="header">
+            <h2>Emprestimos</h2>
+            <h3>Gerenciamento de emprestimos</h3>
+        </div>
+
+        <div class="content">
+            <p>
+            <table>
+                <thead>
+                <tr>
+                    <th width="30%">Cliente</th>
+                    <th width="20%">Livro</th>
+                    <th width="20%">Funcionario</th>
+                    <th width="20%">Emprestimo</th>
+                    <th width="10%">Actions</th>
+                </tr>
+                </thead>
+
+                <tbody data-name="emprestimo-list">
+
+                </tbody>
+            </table>
+            </p>
+
+            <hr>
+
+            <p>
+            <form class="pure-form pure-form-aligned">
+                <fieldset>
+                    <div class="pure-control-group emprestimo_cliente_container">
+                    </div>
+                    <div class="pure-control-group emprestimo_funcionario_container">
+                    </div>
+                    <div class="pure-control-group emprestimo_livro_container">
+                    </div>
+
+                    <div class="pure-control-group">
+<!--                        <input type="text" placeholder="Nome" class="pure-input-1" data-form="livro">-->
+                    </div>
+
+                    <div class="pure-controls form-buttons">
+                        <button type="button" class="pure-button button-primary pure-button-primary button-large" data-form="emprestimo-btn-save">Emprestar</button>
+                    </div>
+                </fieldset>
+            </form>
+            </p>
+        </div>
+    </div>
+
+    <div class="main" data-name="dashboard-module">
+        <div class="header">
+            <h2>Dashboard</h2>
+            <h3>Estatisticas</h3>
+        </div>
+
+        <div class="content" data-name="dashboard-module-content">
+            <div class="row">
+                <div class="column"><h1 data-name="dashboard-module-content-emprestimos"></h1><h3>Emprestimos</h3></div>
+                <div class="column"><h1 data-name="dashboard-module-content-livros"></h1><h3>Livros</h3></div>
+                <div class="column"><h1 data-name="dashboard-module-content-clientes"></h1><h3>Clientes</h3></div>
+            </div>
+            <div class="row">
+                <div class="column"><h1 data-name="dashboard-module-content-funcionarios"></h1><h3>Funcionarios</h3></div>
+                <div class="column"><h1 data-name="dashboard-module-content-funcionarios_inativo"></h1><h3>Funcionarios Inativos</h3></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main" data-name="sobre-module">
+        <div class="header">
+            <h2>Sobre</h2>
+            <h3>Descrição do projeto e sobre mim</h3>
+        </div>
+
+        <div class="content">
+            <h1>Lulu</h1>
+            <h2>Turma</h2>
+        </div>
+    </div>
 </div>
 
 
@@ -202,9 +348,12 @@
 <script src="js/modulo.js"></script>
 <script src="js/modulo-clientes.js"></script>
 <script src="js/modulo-funcionarios.js"></script>
+<script src="js/modulo-livros.js"></script>
+<script src="js/modulo-emprestimos.js"></script>
+<script src="js/modulo-dashboard.js"></script>
 <script>
     (()=>{
-        ui.menu.selectMenu('funcionario');
+        ui.menu.selectMenu('dashboard');
     })();
 </script>
 
